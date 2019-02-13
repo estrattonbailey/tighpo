@@ -1,0 +1,33 @@
+{
+  "name": "tighpo",
+  "version": "0.0.1",
+  "description": "Monitor keystrokes for a specific string and fire a callback when typed.",
+  "source": "index.js",
+  "module": "dist/tighpo.es.js",
+  "main": "dist/tighpo.js",
+  "umd:main": "dist/tighpo.umd.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "microbundle build",
+    "watch": "microbundle watch --compress false"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/estrattonbailey/tighpo.git"
+  },
+  "author": "estrattonbailey",
+  "keywords": [
+    "keystroke",
+    "key watch"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/estrattonbailey/tighpo/issues"
+  },
+  "homepage": "https://github.com/estrattonbailey/tighpo#readme",
+  "devDependencies": {
+    "microbundle": "^0.9.0"
+  }
+}
