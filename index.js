@@ -1,4 +1,4 @@
-let codes = {
+const codes = {
   65: 'a',
   66: 'b', 
   67: 'c',
@@ -25,13 +25,17 @@ let codes = {
   88: 'x',
   89: 'y',
   90: 'z',
-  32: ' '
+  32: ' ',
+  191: '/',
+  13: '↩'
 }
 
-export default function tighpo (word, cb) {
-  let listener
-
+export default function tighpo (word, cb, once) {
   let match = word
+
+  function destroy () {
+    window.removeEventListener('keydown', handler)
+  }
 
   function handler ({ keyCode }) {
     const letter = codes[keyCode]
@@ -42,9 +46,11 @@ export default function tighpo (word, cb) {
 
     if (!match) {
       cb && cb()
-      document.removeEventListener('keydown', handler)
+      once && destroy()
     }
   }
 
-  listener = window.addEventListener('keydown', handler)
+  window.addEventListener('keydown', handler)
+
+  return destroy
 }
