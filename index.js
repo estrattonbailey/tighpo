@@ -47,6 +47,7 @@ export default function tighpo (word, cb, once) {
     if (!match) {
       cb && cb()
       once && destroy()
+      match = word
     }
   }
 
