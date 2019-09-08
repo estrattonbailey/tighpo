@@ -1,6 +1,6 @@
 {
   "name": "tighpo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Monitor keystrokes for a specific string and fire a callback when typed.",
   "source": "index.js",
   "module": "dist/tighpo.es.js",
